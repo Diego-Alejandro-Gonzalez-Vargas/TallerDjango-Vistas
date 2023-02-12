@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1d9a3221-6183-4de0-a3e1-f80a0e0a3c17",
+		"_postman_id": "77b43f93-6a54-44ab-bc8b-434481244170",
 		"name": "Monitoring",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23657573"
 	},
 	"item": [
 		{
@@ -114,7 +115,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}:{{port}}{{api_path}}/variables?id=3",
+					"raw": "{{host}}:{{port}}{{api_path}}/variables?id=1",
 					"host": [
 						"{{host}}"
 					],
@@ -125,7 +126,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "3"
+							"value": "1"
 						}
 					]
 				}
@@ -136,15 +137,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{host}}:{{port}}{{api_path}}/variables",
 							"host": [
@@ -204,15 +196,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{host}}:{{port}}{{api_path}}/variables?id=3",
 							"host": [
@@ -283,14 +266,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}:{{port}}{{api_path}}/variables/3",
+					"raw": "{{host}}:{{port}}{{api_path}}/variables/1",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}{{api_path}}",
 					"path": [
 						"variables",
-						"3"
+						"1"
 					]
 				}
 			},
@@ -365,14 +348,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}:{{port}}{{api_path}}/variables/1",
+					"raw": "{{host}}:{{port}}{{api_path}}/variables/3",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}{{api_path}}",
 					"path": [
 						"variables",
-						"1"
+						"3"
 					]
 				}
 			},
@@ -431,6 +414,152 @@
 					"body": "[\n    {\n        \"model\": \"variables.variable\",\n        \"pk\": 3,\n        \"fields\": {\n            \"name\": \"New Var\"\n        }\n    }\n]"
 				}
 			]
+		},
+		{
+			"name": "Delete Variablee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/variables/3",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"variables",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Measurement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":6,\r\n    \"value\":21,\r\n    \"unit\":\"unituno\",\r\n    \"place\":\"placeuno\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Measurement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/?id=3",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Measurement Dos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Put Measurement",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\":1,\r\n    \"value\":23,\r\n    \"unit\":\"unitchanged\",\r\n    \"place\":\"placechanged\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/1",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Measurement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/3",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Measurements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [

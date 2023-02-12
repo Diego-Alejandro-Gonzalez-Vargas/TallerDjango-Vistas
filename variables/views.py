@@ -22,6 +22,12 @@ def variables_view(request):
         variable = serializers.serialize('json', [variable_dto,])
         return HttpResponse(variable, 'application/json')
 
+    if request.method == 'DELETE':
+        id = request.GET.get("id", None)
+        variable_dto = vl.delete_variable(id)
+        #variable = serializers.serialize('json', [variable_dto,])
+        return HttpResponse('application/json')
+
 @csrf_exempt
 def variable_view(request, pk):
     if request.method == 'GET':
@@ -33,3 +39,8 @@ def variable_view(request, pk):
         variable_dto = vl.update_variable(pk, json.loads(request.body))
         variable = serializers.serialize('json', [variable_dto,])
         return HttpResponse(variable, 'application/json')
+
+    if request.method == 'DELETE':
+        variable_dto = vl.delete_variable(pk)
+        #variable = serializers.serialize('json', [variable_dto,])
+        return HttpResponse('application/json')
