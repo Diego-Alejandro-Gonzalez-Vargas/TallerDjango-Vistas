@@ -441,7 +441,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"variable\":6,\r\n    \"value\":21,\r\n    \"unit\":\"unituno\",\r\n    \"place\":\"placeuno\"\r\n}",
+					"raw": "{\r\n    \"variable\":7,\r\n    \"value\":21,\r\n    \"unit\":\"unituno\",\r\n    \"place\":\"placeuno\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -510,14 +510,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}:{{port}}{{api_path}}/measurements/1",
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/3",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}{{api_path}}",
 					"path": [
 						"measurements",
-						"1"
+						"3"
 					]
 				}
 			},
